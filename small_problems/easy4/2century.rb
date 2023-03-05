@@ -77,10 +77,10 @@ puts century(2001)
 puts century(1965)
 puts century(256)
 puts century(5)
-puts century(10103)
+puts century(10_103)
 puts century(1052)
 puts century(1127)
-puts century(11201)
+puts century(11_201)
 puts century(3298472309848239048)
 
 # as usual, books solution is much more simple
