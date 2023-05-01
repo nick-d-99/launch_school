@@ -3,13 +3,13 @@
 def leading_substrings(str)
   result = [str[0]]
   i = 0
-  str.each_char do |char|
-    if i == 0
+  str.each_char do
+    if i.zero?
       i += 1
       next
     end
-    result << str[0..i]
-    i += 1
+    result << str[0..i] && i += 1
+    # i += 1
   end
   result
 end
