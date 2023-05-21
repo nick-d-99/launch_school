@@ -6,11 +6,11 @@ def leading_substrings(str)
   result = [str[0]]
   i = 0
   str.each_char do
-    if i.zero?
+    if i.zero? # in this case, we already appeneded the first letter
       i += 1
       next
     end
-    result << str[0..i] && i += 1
+    result << str[0..i] && i += 1 # append the longer substring and increment idx
   end
   result
 end
