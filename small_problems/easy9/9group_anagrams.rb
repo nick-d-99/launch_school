@@ -3,12 +3,26 @@ WORDS =  ['demo', 'none', 'tied', 'evil', 'dome', 'mode', 'live',
   'fowl', 'veil', 'wolf', 'diet', 'vile', 'edit', 'tide',
   'flow', 'neon']
 
-def anagrams
-  pools = 
-  WORDS.each do |word|
-  end
+def display(solution)
+  solution.each { |arr| p arr }
 end
 
-anagrams
+def anagrams
+  result = []
+  pools = Hash.new { |k, v| k[v] = [] }
+  WORDS.each do |word|
+    alpha = word.chars.sort
+    pools[alpha] << word
+  end
+  pools.each do |_, val|
+    result << val
+  end
+  result
+end
 
-# 
+display(anagrams)
+
+# for once, I like my solution better
+
+# was stumped yesterday, thought about it at work and slept on it and was able to
+# solve today
