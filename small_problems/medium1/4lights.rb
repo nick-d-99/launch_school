@@ -13,50 +13,51 @@
 # The result is that 2 lights are left on, lights 1 and 4. The return value is [1, 4].
 
 # With 10 lights, 3 lights are left on: lights 1, 4, and 9. The return value is [1, 4, 9].
+def solution(arr)
+  solution = []
+  arr.each_with_index { |val, idx| solution << (idx + 1) if val }
+  solution
+end
 
 def helper(n, arr)
   len = arr.length
-  i_len = len - 1
-  # p len
-  
-  # 0.step(i_len, n) do |i|
-  #   p i
-  #   arr[i + 1] = !arr[i + 1]
-  # end
-
   if n == 1
     arr.map! { |val| !val }
     return arr
   else
-    0.step(len, n) do |i|
-      p i
-      arr[i] = !arr[i] if i < len
+    n.step(len, n) do |i|
+      arr[i - 1] = !arr[i - 1] if (i - 1) < len
     end
   end
   arr
 end
 # so close problem is switch 2 has index 3
 # problem stems from iterating and referencing
-# also running loop 3 times 0.step... do |i| results in 3 loops but i want
-# an iterator
+
+# additional problem (solved) starting at 0 each time but need to start
+# at n
 
 def switches(num)
   arr = []
   num.times { arr << false }
-  p 'round 0', arr
-  arr = helper(1, arr)
-  p 'round 1', arr
-  arr = helper(2, arr)
-  p 'round 2', arr
-  helper(3, arr)
-  p 'round 3', arr
-  # helper(num, arr)
-  p arr
+  count = 1
+  while count <= num
+    arr = helper(count, arr)
+    count += 1
+  end
+  solution(arr)
 end
 
-# p switches(1)
-# p switches(2)
-# p switches(3)
-# p switches(4)
 p switches(5)
-# p swithces(10)
+p switches(10)
+p switches(1000)
+
+=begin
+ problems solved:
+ - indexing
+  - 1st switch has index 0, 2nd switch has index 1 etc.
+
+- 0.step(len, n)
+  - need to start AT n not at 0
+  - little detail in prompt i missed first time around 
+=end
