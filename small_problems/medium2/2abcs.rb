@@ -27,13 +27,21 @@ BLOCKS = {
 def block_word?(word)
   banned = []
   word.each_char do |char|
-    if banned.include? char
-      false
+    char.upcase!
+    if banned.include?(char)
+      return false
     else
-      banned << char
-      banned << BLOCKS[char.to_sym]
+      key_check = BLOCKS.key(char)
+      if BLOCKS.key?(char.to_sym)
+        banned << char
+        banned << BLOCKS[char.to_sym]
+      elsif key_check
+        banned << char
+        banned << key_check.to_s
+      end
     end
   end
+  # p banned
   true
 end
 
@@ -41,6 +49,8 @@ p block_word?('BATCH') == true
 p block_word?('BUTCH') == false
 p block_word?('jest') == true
 p block_word?('moz') == false
+p block_word?('er') == false
+p block_word?('erdjksgfahsjkldfhas') == false
 
 # need to accout for values
 # right now the program added looks at keys
