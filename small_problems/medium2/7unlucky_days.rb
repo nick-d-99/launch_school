@@ -7,7 +7,7 @@ def friday_13th(year)
   year.to_s
   (1..12).each do |month|
     month.to_s
-    str = "#{year.to_s}-#{month}-#{day}"
+    str = "#{year}-#{month}-#{day}"
     date = Date.parse(str)
     count += 1 if date.wday == 5
   end
