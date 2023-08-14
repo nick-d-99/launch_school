@@ -5,11 +5,11 @@
 # Modify your transpose method from the previous exercise so it works with any matrix with at least 1 row and 1 column.
 
 def transpose(mat)
-  # col = mat.size
-  # row = mat[0].size
-  mat.each_with_index do |arr, idx|
-    
-  end
+  m = mat.size  # col
+  n = mat[0].size # row
+  p m, n
+  sol = []
+  # end
 end
 
 # matrix = [
