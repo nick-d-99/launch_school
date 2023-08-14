@@ -4,20 +4,22 @@
 
 # Modify your transpose method from the previous exercise so it works with any matrix with at least 1 row and 1 column.
 
-def transpose( mat)
-  sol = [[]]
-  mat.each_with_index do |arr, arr_idx|
-    arr.each_with_index do |val, idx|
-      sol[arr_idx][idx] = mat[idx][arr_idx]
-    end
+def transpose(mat)
+  # col = mat.size
+  # row = mat[0].size
+  mat.each_with_index do |arr, idx|
+    
   end
-  sol
 end
 
 # matrix = [
-#   [1, 5, 8],
-#   [4, 7, 2],
-#   [3, 9, 6]
+#   1 2 3
+#   4 5 6
+#   7 8 9
+
+#   1	4	7
+#   2	5	8
+#   3	6	9
 # ]
 
 transpose([[1, 2, 3, 4]]) == [[1], [2], [3], [4]]
