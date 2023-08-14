@@ -1,0 +1,47 @@
+Question 2
+
+Describe the difference between ! and ? in Ruby. And explain what would happen in the following scenarios:
+
+    what is != and where should you use it?
+    put ! before something, like !user_name
+    put ! after something, like words.uniq!
+    put ? before something
+    put ? after something
+    put !! before something, like !!user_name
+
+Response:
+The ! is used to show a method that manipulates the caller.
+That means the object that calls the function is altered after.
+
+The ? is used to denote a boolean function meaning it will return
+a true or false.
+
+!= means not equal to and will return true if the 2 values altered
+different, but false if they are the same
+
+! before something will flip its boolean value. !user_name would 
+return false since all variables are truthy. !true would return false
+and !true would return false
+
+! after something denotes a function that will manipulate the object
+words.uniq will return a new object without any duplicates but words will 
+remain the same. words.uniq! will change words too.
+
+? before something means nothing
+
+? after something denotes a method that will return true or false
+
+!! before something turns it into a boolean. Given variable 'var' p var will
+print the variable's value. printing !var will return false anfd printing
+!!var will return true.
+
+Book solution:
+
+
+Just to clarify, if you see ! or ? at the end of the method, it's actually part of the method name, and not Ruby syntax. Therefore, you really don't know what the method is doing, even if it ends in those characters -- it depends on the method implementation. The other uses are actual Ruby syntax:
+
+    != means "not equals"
+    ? : is the ternary operator for if...else
+    !!<some object> is used to turn any object into their boolean equivalent. (Try it in irb)
+    !<some object> is used to turn any object into the opposite of their boolean equivalent, just like the above, but opposite.
+
