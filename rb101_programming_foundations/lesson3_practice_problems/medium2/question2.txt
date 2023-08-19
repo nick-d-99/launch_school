@@ -1,0 +1,18 @@
+Let's take a look at another example with a small difference in the code:
+
+a = 42
+b = 42
+c = a
+
+puts a.object_id
+==> 00
+
+puts b.object_id
+==> 01
+
+puts c.object_id
+==> 00
+
+I did not know that integers are immutable values in Ruby meaning the object ID of an integer will
+remain the same regardless of when or where it is called or instantiated. The same with True, False, and
+nil.

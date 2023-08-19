@@ -1,0 +1,28 @@
+Every object in Ruby has access to a method called object_id, which returns a numerical value that uniquely
+identifies the object. This method can be used to determine whether two variables are pointing to the same 
+object.
+
+Take a look at the following code and predict the output:
+
+a = "forty two"
+b = "forty two"
+c = a
+
+puts a.object_id
+==> unique number representing object a (00 for example's sake)
+
+puts b.object_id
+==> unique number representing object for b (01 for example's sake)
+
+puts c.object_id
+==> this would point to the object ID of object a (00)
+My thought process is that the variable a is pointing to a value in memory
+Object C is pointing to that access point, that physical location in memory which is the value of object a.
+
+Variable a is point to a location in memory that stores a value (integer, string, whatever)
+When we call a, we are asking the computer to look at and retrieve that stored value. a represents
+the physical location in memory. When we write c = a, we are saying the variable c is pointing to a, which
+in and of itself is ANOTHER pointer. So it looks something like this
+
+a ---> some value
+c ---> a ---> some value
