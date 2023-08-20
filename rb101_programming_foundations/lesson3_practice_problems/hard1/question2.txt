@@ -1,0 +1,18 @@
+What is the result of the last line in the code below?
+
+greetings = { a: 'hi' }
+informal_greeting = greetings[:a]
+informal_greeting << ' there'
+
+puts informal_greeting  #  => "hi there"
+puts greetings
+
+the result is printing the contents of the greetings dictionary
+this dictionary is unaltered
+
+incorrect but i fell for the trap the question was trying to highlight
+
+'informal_greeting = greetings[:a]' is a reference to the object so whatever is done to this variable
+is done to the original value
+
+the actual output would be { a=> 'hi there' }
