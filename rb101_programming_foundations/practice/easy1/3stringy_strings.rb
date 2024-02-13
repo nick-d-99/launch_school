@@ -1,7 +1,7 @@
 def stringy(num)
   result = '1'
   alt = true
-  (num - 1).times do |count|
+  (num - 1).times do
     if alt
       result << '0'
       alt = false
