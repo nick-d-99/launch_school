@@ -7,4 +7,4 @@ end
 greeting
 
 there would be an error because greeting is never declared due to 'if false' always evaluating to 'false'
-so line 4 is never executed and there is no greeting variable
+so line 4 is never executed and there is no greeting variable.
