@@ -16,9 +16,15 @@ Keep in mind that you're not allowed to use #odd? or #even? in your solution.
 
 =end
 
+# def is_odd?(num)
+#   num % 2 == 0 ? false : true
+# end
+
+# ^ original answer but a little simpler solution:
 def is_odd?(num)
-  num % 2 == 0 ? false : true
+  num % 2 != 0
 end
+
 
 puts is_odd?(2)    # => false
 puts is_odd?(5)    # => true
